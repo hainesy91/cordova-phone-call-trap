@@ -7,6 +7,7 @@ import android.content.Context;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import java.lang.reflect.Method;
+import java.lang.Class;
 
 import org.json.JSONException;
 import org.json.JSONArray;
