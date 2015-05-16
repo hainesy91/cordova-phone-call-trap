@@ -66,7 +66,10 @@ public class PhoneCallTrap extends CordovaPlugin {
             
             } catch ( NoSuchMethodException e ) {
          
-            } catch ( IllegalAccessException e ) {}
+            } catch ( IllegalAccessException e ) {
+                
+                
+            }catch ( InvocationTargetException e ) {}
             
           
     
