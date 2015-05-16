@@ -9,6 +9,7 @@ import android.telephony.TelephonyManager;
 import android.widget.Toast;
 import java.lang.reflect.Method;
 import java.lang.Class;
+
 import java.lang.reflect.InvocationTargetException;
 
 import org.json.JSONException;
@@ -38,13 +39,6 @@ public class PhoneCallTrap extends CordovaPlugin {
             }
          else  if( "endCall".equals(action))
             {
-                Context context = callbackContext;
-                CharSequence text = "Hello toast!";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-
                 EndCall();
             }
 
