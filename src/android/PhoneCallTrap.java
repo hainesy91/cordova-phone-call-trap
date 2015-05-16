@@ -6,7 +6,7 @@ import org.apache.cordova.PluginResult;
 import android.content.Context;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
-import android.widget.Toast
+import android.widget.Toast;
 import java.lang.reflect.Method;
 import java.lang.Class;
 import java.lang.reflect.InvocationTargetException;
