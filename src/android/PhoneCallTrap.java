@@ -16,7 +16,7 @@ public class PhoneCallTrap extends CordovaPlugin {
     CallStateListener listener;
 
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if(action == "onCall")
+        if( "onCall".equals(action))
             {
             prepareListener();
 
