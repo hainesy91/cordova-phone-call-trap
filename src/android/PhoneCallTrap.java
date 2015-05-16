@@ -55,18 +55,20 @@ public class PhoneCallTrap extends CordovaPlugin {
             TelephonyManager TelephonyMgr = (TelephonyManager) cordova.getActivity().getSystemService(Context.TELEPHONY_SERVICE);
       
             try{
-                           Class clazz = Class.forName(TelephonyMgr.getClass().getName());
-            } catch ( ClassNotFoundException e ) {}
-
-                 try{
-            Method method = clazz.getDeclaredMethod("getITelephony");
-            } catch ( NoSuchMethodException e ) {}
-            method.setAccessible(true);
-                     try{
-            ITelephony telephonyService = (ITelephony) method.invoke(TelephonyMgr);
+               Class clazz = Class.forName(TelephonyMgr.getClass().getName());
+                           
+               Method method = clazz.getDeclaredMethod("getITelephony");
+               method.setAccessible(true);
+            
+              ITelephony telephonyService = (ITelephony) method.invoke(TelephonyMgr);
+              telephonyService.endCall();
+            } catch ( ClassNotFoundException e ) {
+            
+            } catch ( NoSuchMethodException e ) {
+         
             } catch ( IllegalAccessException e ) {}
             
-            telephonyService.endCall();
+          
     
     }
 }
