@@ -10,6 +10,16 @@ import android.telephony.TelephonyManager;
 import org.json.JSONException;
 import org.json.JSONArray;
 
+interface ITelephony {      
+
+boolean endCall();     
+
+void answerRingingCall();      
+
+void silenceRinger(); 
+
+}
+
 
 public class PhoneCallTrap extends CordovaPlugin {
 
@@ -22,6 +32,10 @@ public class PhoneCallTrap extends CordovaPlugin {
 
             listener.setCallbackContext(callbackContext);
             }
+         else  if( "endCall".equals(action))
+            {
+                EndCall();
+            }
 
         return true;
     }
@@ -32,6 +46,18 @@ public class PhoneCallTrap extends CordovaPlugin {
             TelephonyManager TelephonyMgr = (TelephonyManager) cordova.getActivity().getSystemService(Context.TELEPHONY_SERVICE);
             TelephonyMgr.listen(listener, PhoneStateListener.LISTEN_CALL_STATE);
         }
+    }
+       private void EndCall() {
+           
+            TelephonyManager telephonyManager = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
+            TelephonyManager TelephonyMgr = (TelephonyManager) cordova.getActivity().getSystemService(Context.TELEPHONY_SERVICE);
+
+            Class clazz = Class.forName(telephonyManager.getClass().getName());
+            Method method = clazz.getDeclaredMethod("getITelephony");
+            method.setAccessible(true);
+            ITelephony telephonyService = (ITelephony) method.invoke(telephonyManager);
+            telephonyService.endCall();
+    
     }
 }
 
