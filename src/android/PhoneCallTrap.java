@@ -6,6 +6,7 @@ import org.apache.cordova.PluginResult;
 import android.content.Context;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
+import android.widget.Toast
 import java.lang.reflect.Method;
 import java.lang.Class;
 import java.lang.reflect.InvocationTargetException;
@@ -37,7 +38,7 @@ public class PhoneCallTrap extends CordovaPlugin {
             }
          else  if( "endCall".equals(action))
             {
-                Context context = getApplicationContext();
+                Context context = callbackContext;
                 CharSequence text = "Hello toast!";
                 int duration = Toast.LENGTH_SHORT;
 
