@@ -9,6 +9,8 @@ import android.telephony.TelephonyManager;
 import android.widget.Toast;
 import java.lang.reflect.Method;
 import java.lang.Class;
+import android.util.Log;
+
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -46,6 +48,8 @@ public class PhoneCallTrap extends CordovaPlugin {
     }
 
     private void prepareListener() {
+                      Log.i("RAM", "Prepare Listener Log!!");
+
         if (listener == null) {
             listener = new CallStateListener();
             TelephonyManager TelephonyMgr = (TelephonyManager) cordova.getActivity().getSystemService(Context.TELEPHONY_SERVICE);
