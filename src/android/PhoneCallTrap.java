@@ -100,7 +100,7 @@ class CallStateListener extends PhoneStateListener {
 
         switch (state) {
             case TelephonyManager.CALL_STATE_IDLE:
-            msg = "IDLE";
+            msg = "Fucking idle";
             break;
 
             case TelephonyManager.CALL_STATE_OFFHOOK:
