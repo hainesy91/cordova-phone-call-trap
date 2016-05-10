@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-           id="io.gvox.plugin.phonecalltrap"
+           id="hainsey.plugin.phonecalltrap"
       version="0.1.1">
     <name>PhoneCallTrap</name>
     <description>A phone call trap</description>
@@ -17,7 +17,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="PhoneCallTrap">
-                <param name="android-package" value="io.gvox.phonecalltrap.PhoneCallTrap" />
+                <param name="android-package" value="hainsey.phonecalltrap.PhoneCallTrap" />
             </feature>
         </config-file>
 
@@ -28,6 +28,6 @@
 
         </config-file>
 
-        <source-file src="src/android/PhoneCallTrap.java" target-dir="src/io/gvox/phonecalltrap" />
+        <source-file src="src/android/PhoneCallTrap.java" target-dir="src/hainsey/phonecalltrap" />
      </platform>
 </plugin>
